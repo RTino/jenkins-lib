@@ -1,8 +1,6 @@
 package com.foo
 class Utilities {
-  static def color_sh(script, cmd) {
-    wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-      script.sh cmd
-    }
+  static def mvn(script, args) {
+    script.sh "${script.tool 'Maven'}/bin/mvn -s ${script.env.HOME}/jenkins.xml -o ${args}"
   }
 }
