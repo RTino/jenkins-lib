@@ -1,7 +1,7 @@
 package com.foo
 
-def color_sh(cmd){
-    wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-        sh cmd
-    }
+static def color_sh(script, cmd) {
+  wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
+    script.sh cmd
+  }
 }
